@@ -1,38 +1,99 @@
-.App {
+
+.board {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid gray;
+  background-color: rgb(44, 43, 43);
+  margin: 0 auto;
+  position: relative;
+}
+
+.board .board-cell {
+  height: 10px;
+  width: 10px;
+  display: inline-block;
+}
+.board-cell.hasSnake {
+  background-color: rgb(217, 239, 243);
+}
+
+/* .board-cell.isBreakpoint {
+  background-color: red;
+} */
+
+.board-cell.isMeal {
+  background-color: rgb(140, 216, 140);
+  border-radius: 50%;
+}
+
+/* 
+cell width = 10px
+total width for n dim = width of cell * n
+*/
+
+.container {
+  position: relative;
+}
+.container .header {
+  height: 50px;
+  width: 300px;
+  border: 1px solid rgb(44, 43, 43);
+  display: flex;
+  margin: 0 auto;
+}
+
+.container .header .heading {
+  padding: 5px;
+  width: 60%;
+  display: grid;
+  place-content: center;
+}
+.container .header .heading h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.container .header .score {
+  width: 40%;
+  padding: 5px;
+  display: grid;
+  place-content: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.board-container {
+  height: calc(100vh - 70px);
+}
+.screen {
+  left: 0;
+  right: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-color: #57505d;
+  display: grid;
+  place-items: center;
+  transition: 0.3s ease;
+  opacity: 0;
+}
+.screen.show {
+  opacity: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.screen .btn-container {
+  color: #fff;
+  text-align: center;
+}
+.screen .btn-container p {
+  font-size: 16px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.screen .btn-container button {
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 50px;
+  border: none;
+  background: #4ab8c6;
 }
