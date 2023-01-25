@@ -292,8 +292,8 @@ export function Board() {
                     });
                 }
                 break;
-            case KeyboardCode.SPACE:
-                progressGame();
+            // case KeyboardCode.SPACE:
+            //     progressGame();
         }
     };
 
